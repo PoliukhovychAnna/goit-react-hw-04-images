@@ -48,9 +48,13 @@ export const App = () => {
            abortCtrl.current.signal
         );
         if (hits.length === 0) {
-          return toast.error('Sorry, there are no images for your request...');
+          return toast.error('Sorry, there are no images for your request...', {
+            autoClose: 3000,
+          });
         } else if (currentPage === 1) {
-          return toast.success('Wow! We found some images for you!');
+          toast.success('Wow! We found some images for you!', {
+            autoClose: 3000,
+          });
         } 
 
          setPictures(prevState => [...prevState, ...hits]);
